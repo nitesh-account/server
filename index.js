@@ -4,7 +4,7 @@ import mongoose from 'mongoose'
 import cors from 'cors';
 import dotenv from 'dotenv';
 
-import postRoutes from './routes/posts.js'
+import randomDataRoutes from './routes/randomdata.js'
 
 const app = express();
 dotenv.config();
@@ -13,10 +13,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cors());
 
-app.use('/posts', postRoutes);
+app.use('/randomdata', randomDataRoutes);
 
 app.get('/', (req, res) => {
-    res.send("Hello to dashboard API");
+    res.send("Hello to dashboard API test");
 })
 
 // const CONNECTION_URL = 'mongodb+srv://user_01:test123@cluster0.yjzl3.mongodb.net/<dbname>?retryWrites=true&w=majority';
